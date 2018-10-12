@@ -42,7 +42,7 @@ if ( !empty($_POST)) {
     if ($valid) {
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "UPDATE saftey  set ins_n = ?, explanation = ?, date =? WHERE id = ?";
+        $sql = "UPDATE safety  set ins_n = ?, explanation = ?, date =? WHERE id = ?";
         $q = $pdo->prepare($sql);
         $q->execute(array($ins_n,$explanation,$date,$id));
         Database::disconnect();
@@ -51,7 +51,7 @@ if ( !empty($_POST)) {
 } else {
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM saftey where id = ?";
+    $sql = "SELECT * FROM safety where id = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
     $data = $q->fetch(PDO::FETCH_ASSOC);

@@ -34,7 +34,7 @@
         if ($valid) {
             $pdo = Database::connect();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = "INSERT INTO saftey (ins_n,explanation,date) values(?, ?, ?)";
+            $sql = "INSERT INTO safety (ins_n,explanation,date) values(?, ?, ?)";
             $q = $pdo->prepare($sql);
             $q->execute(array($ins_n,$explanation,$date));
             Database::disconnect();

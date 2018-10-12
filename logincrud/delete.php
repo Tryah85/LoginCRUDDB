@@ -13,7 +13,7 @@ if ( !empty($_POST)) {
     // delete data
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "DELETE FROM saftey  WHERE id = ?";
+    $sql = "DELETE FROM safety  WHERE id = ?";
     $q = $pdo->prepare($sql);
     $q->execute(array($id));
     Database::disconnect();
